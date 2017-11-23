@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/blockchain-explorer.iml" filepath="$PROJECT_DIR$/.idea/modules/blockchain-explorer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/blockchain-explorer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/blockchain-explorer_main.iml" group="blockchain-explorer" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/blockchain-explorer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/blockchain-explorer_test.iml" group="blockchain-explorer" />
+      <module fileurl="file://$PROJECT_DIR$/explorer.iml" filepath="$PROJECT_DIR$/explorer.iml" />
     </modules>
   </component>
 </project>
