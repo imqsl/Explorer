@@ -89,28 +89,97 @@
         <div class="col-md-12"><h2 class="text-center">以太坊 网络 状态</h2></div>
     </div>
     <div class="row">
-        <div class="col-md-3 text-center">
-            <div data-toggle="tooltip" data-placement="top" title="Ethereum price in USD and BTC"
+        <div class="col-md-1 text-center glyphicon glyphicon-option-horizontal"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
                  class="panel panel-primary">
-                <div class="panel-heading"><h3 class="panel-title">价格</h3></div>
-                <div class="panel-body" id="price"><h4 data-bind="text: price"></h4></div>
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block0"></h4></div>
             </div>
         </div>
-        <div class="col-md-3 text-center">
-            <div data-toggle="tooltip" data-placement="top" title="Average difficulty over the last 24 hours"
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-right"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
                  class="panel panel-info">
-                <div class="panel-heading"><h3 class="panel-title">困难度</h3></div>
-                <div class="panel-body" id="difficulty"><h4 data-bind="text: difficulty"></h4></div>
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block1"></h4></div>
             </div>
         </div>
-        <div class="col-md-3 text-center">
-            <div data-toggle="tooltip" data-placement="top" title="Average block time over the last 24 hours"
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-right"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
                  class="panel panel-success">
-                <div class="panel-heading"><h3 class="panel-title">区块时间</h3></div>
-                <div class="panel-body" id="blockTime"><h4 data-bind="text: blockTime"></h4></div>
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block2"></h4></div>
+            </div>
+        </div>
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-right"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-warning">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block3"></h4></div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10 text-center glyphicon glyphicon-arrow-down"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-success">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block7"></h4></div>
+            </div>
+        </div>
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-left"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-info">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4  id="block6"></h4></div>
+            </div>
+        </div>
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-left"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-primary">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block5"></h4></div>
+            </div>
+        </div>
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-left"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-danger">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block4"></h4></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1 text-center glyphicon glyphicon-arrow-down"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-warning">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block8"></h4></div>
+            </div>
+        </div>
+        <div class="col-md-1 text-center glyphicon glyphicon-arrow-right"></div>
+        <div class="col-md-2 text-center">
+            <div data-toggle="tooltip" data-placement="top"
+                 class="panel panel-danger">
+                <div class="panel-heading"><h3 class="panel-title">区块号:</h3></div>
+                <div class="panel-body"><h4 id="block9"></h4></div>
+            </div>
+        </div>
+        <div class="col-md-1 text-center glyphicon glyphicon-option-horizontal"></div>
+    </div>
+
     <div class="row">
         <div class="col-md-4"><h2 class="text-center">最新区块</h2>
             <div class="table-responsive">
@@ -162,7 +231,6 @@
     var priceurl = "https://etherchain.org/api/statistics/price";
     var baseurl = "https://etherchain.org/api/basic_stats";
     var txurl;
-    $.ajaxSettings.async = false;//同步ajax请求
     $.getJSON(priceurl, function (result) {
         var result = eval(result);
         usd = result.data[result.data.length - 1].usd;
@@ -243,6 +311,7 @@
             } else {
                 subname = name;
             }
+            $("#block"+i).append(number);
             $("#recentblocks").append("<tr><td><a href='block.html?number="+ number+"'>" +
                 "" + number + "</a></td>" + "<td><a href='acount.html?coinbase=" + coinbase + "'>" +
                 subname +
