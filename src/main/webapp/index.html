@@ -311,7 +311,9 @@
             } else {
                 subname = name;
             }
-            $("#block"+i).append(number);
+            $("#block"+i).append("<a href='block.html?number="+number+"'>" +
+            number +
+            "</a> ");
             $("#recentblocks").append("<tr><td><a href='block.html?number="+ number+"'>" +
                 "" + number + "</a></td>" + "<td><a href='acount.html?coinbase=" + coinbase + "'>" +
                 subname +
